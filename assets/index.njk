@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="unititled" />
+  <meta name="keywords" content="HTML5 Crowdfunding Profile Template" />
+  <meta name="author" content="Audain Designs" />
+  <link rel="shortcut icon" href="favicon.ico" />
+
+  <title>SAVE MONEY</title>
+
+  <!-- Gobal CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Template CSS -->
+  <link href="css/style.css" rel="stylesheet" />
+
+  <!--Fonts-->
+  <link
+          href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+          rel="stylesheet"
+  />
+  <link
+          href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800"
+          rel="stylesheet"
+          type="text/css"
+  />
+
+  <!-- 모달 css -->
+  <link rel="stylesheet" type="text/css" href="./css/style_modal.css">
+
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YGHDEWZDM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-6YGHDEWZDM');
+  </script>
+</head>
+<body>
+<!--header-->
+<div class="main-header">
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="goal-summary pull-left" style="padding-left: 0px; ">
+          <div style="background-color: white; border-radius: 30px 30px 30px 30px;">
+            <div style="width: 160px" class="backers">
+            <a href="/" style="width: 160px" class="backers">
+              <img
+                      src="img/logo_web.png"
+                      alt="로고"
+                      c
+                      width="160"
+                      height="130"
+              />
+              </a>
+            </div>
+            <div class="backers">
+              <a href="/">
+                <img
+                        src="img/title.png"
+                        alt="로고"
+                        style="display: block"
+                />  </a>
+              </a>
+              <!-- <h3 style="font-size: 50px; font-weight: bold;" >너 또 돈 써?</h3> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+<!--/header-->
+
+
+<!--main content-->
+<div class="main-content">
+  <div class="container">
+    <div class="row">
+      <!-- Add Post Button -->
+      <div class="content col-md-1 col-sm-12 col-xs-12">
+        <button id="add-post-button" onclick="openPostModal()">
+          +
+        </button>
+      </div>
+
+      <div class="content col-md-7 col-sm-12 col-xs-12">
+
+        <!-- 포스트 목록 구역 -->
+
+
+        <div class="section-block" style="height: 1000px; overflow: auto;">
+
+          <div class="posting">
+
+            <!-- 포스트 작성 창 -->
+            <div id="post-modal" class="modal" style="height: 1100px">
+              <div class="modal-content" style="height: 620px">
+                <div style="text-align: right">
+
+                  <button id="add-post-button" onclick="closePostModal()">
+                    x
+                  </button>
+                </div>
+
+
+                <div id="table-container">
+                  <table border = "1" id="myTable" class="table">
+                    <tr class="price">
+                      <td style="width: 50px;">날짜</td>
+                      <td><input type="date" name="date" id="date" required></td>
+                    </tr>
+                    <tr class="price">
+                      <td style="width: 50px;">금액</td>
+                      <td><input type="text" name="price" id="price" required></td>
+                    </tr>
+                    <tr>
+                      <td style="width: 50px;">내용</td>
+                      <td>
+                            <textarea
+                                    class="Incontent"
+                                    name="content"
+                                    id="post-content"
+                                    cols="30"
+                                    rows="10"
+                                    placeholder="포스트 내용을 입력하세요..."
+                                    required>
+                          </textarea>
+                      </td>
+                    </tr>
+                    <tr>
+                      <!-- 사진 업로드를 위한 입력 필드 -->
+                      <td></td>
+                      <td>
+                        <!-- 이미지 미리보기를 위한 영역 -->
+                        <div id="imagePreview"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="width: 50px;">사진</td>
+                      <td>
+                        <input type="file" name="fileInput" id="fileInput" accept="image/* required">
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <button class = "save-button" onclick="savePost()">게시물 저장</button>
+
+
+
+              </div>
+            </div>
+            <div id="thread-container"></div>
+            <!-- 모달 구현 부분 -->
+            <div id="myModal" class="modal" style="height: 1100px">
+              <div id="modalContent" class="modal-content"></div>
+            </div>
+
+
+            <!-- 포스팅 목록 표시 됨 -->
+
+
+            <script>
+
+
+
+            </script>
+
+
+            <div id="comment-modal" class="modal">
+              <div class="modal-content">
+                    <span class="close" onclick="closeCommentModal()"
+                    >&times;</span
+                    >
+                <div id="post-content-container"></div>
+                <textarea
+                        id="comment-content"
+                        placeholder="댓글을 입력하세요..."
+                ></textarea>
+                <button class= "save-button" onclick="saveComment()">댓글 저장</button>
+                <div id="comments-container"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- 포스팅 목록 올라감 -->
+        <ul id="postList">
+          <!-- 포스팅 목록 -->
+        </ul>
+      </div>
+      <!--/tabs-->
+      <!--/main content-->
+      <!--sidebar-->
+
+      <div class="content col-md-4 col-sm-12 col-xs-12">
+        <div class="section-block summary">
+          <h1 class="section-title">{{ nickname }}</h1>
+          <div class="profile-contents">
+            <img
+                    src="{{ user_image }}"
+                    class="profile-image img responsive"
+                    alt="로그인 해주세요"
+            />
+            {% if loggedIn %}
+            <h2 class="user-ranking">{{ranking}}</h2>
+            <a href="/auth/logout"> 로그아웃 하기</a>
+            <p></p>
+            <a
+                    href="/auth/unlink"
+                    class="btn_unlink"
+                    onclick="return confirmUnlink();"
+            >회원 탈퇴</a
+            >
+
+            <script>
+              function confirmUnlink() {
+                return confirm("회원 탈퇴를 진행하시겠습니까?");
+              }
+            </script>
+
+            {% endif %} {% if not loggedIn %}
+            <a href="/auth/kakao" class="btn btn-contact">
+              <img
+                      src="img/kakao_login_medium_narrow.png"
+                      alt="Kakao Login"
+              />
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="whatsup">
+          <!-- <h1 class="section-title">REWARDS</h1> -->
+          <!--reward blocks-->
+          <div class="mypage-block">
+            <!-- <span><i class="fa fa-users"></i> 180 backers</span> -->
+            <a href="/mypage" class="btn btn-mypage">MY POST</a>
+          </div>
+        </div>
+        <div class="whatsup">
+          <div class="mypage-block">
+            <!-- 버튼이 mypage 버튼과 같은 디자인이라 그냥 btn-mypage라고 똑같이 썼음 -->
+            <a href="/challenge" class="btn btn-mypage">CHALLENGE</a>
+          </div>
+        </div>
+      </div>
+      <!--/sidebar-->
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <span class="copyright">Created by Web-gurae</span>
+    </div>
+  </div>
+</footer>
+<script>
+  document.getElementById('date').value = new Date().toISOString().substring(0, 10);;
+</script>
+
+<!-- Global jQuery -->
+<script
+        type="text/javascript"
+        src="assets/js/jquery-1.12.3.min.js"
+></script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+
+<!-- Template JS -->
+<script type="text/javascript" src="js/posting.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
+<script type="text/javascript" src = mainpost.js></script>
+</body>
+</html>

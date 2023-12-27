@@ -1,0 +1,132 @@
+/* main-calender 해당 css */
+.main_calender * {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+.main_calender body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.main_calender .calendar {
+  width: 600px;
+  margin: 30px;
+  margin-top: 0;
+}
+
+.main_calender .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main_calender .year-month {
+  font-size: 35px;
+}
+
+.main_calender .nav {
+  display: flex;
+  border: 1px solid #333333;
+  border-radius: 5px;
+}
+
+.main_calender .nav-btn {
+  width: 28px;
+  height: 30px;
+  border: none;
+  font-size: 16px;
+  line-height: 34px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.main_calender .go-today {
+  width: 75px;
+  border-left: 1px solid #333333;
+  border-right: 1px solid #333333;
+}
+
+.main_calender .days {
+  display: flex;
+  margin: 25px 0 10px;
+}
+
+.main_calender .day {
+  width: calc(100% / 7);
+  text-align: center;
+}
+
+.main_calender .dates {
+  display: flex;
+  flex-flow: row wrap;
+  height: 500px;
+  border-top: 1px solid #333333;
+  border-right: 1px solid #333333;
+}
+
+/* main_calender.css 파일에 추가 */
+.main_calender .date {
+  width: calc(100% / 7);
+  padding: 15px;
+  text-align: right;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #333333;
+  position: relative;
+}
+
+.main_calender .day:nth-child(7n + 1),
+.main_calender .date:nth-child(7n + 1) {
+  color: #d13e3e;
+}
+
+.main_calender .day:nth-child(7n),
+.main_calender .date:nth-child(7n) {
+  color: #396ee2;
+}
+
+.main_calender .other {
+  opacity: 0.3;
+}
+
+.main_calender .today {
+  position: relative;
+  color: #ffffff;
+  z-index: 2;
+}
+
+.main_calender .today::before {
+  position: absolute;
+  top: 10px;
+  left: 78%;
+  transform: translateX(-50%);
+  z-index: -1;
+  width: 30px;
+  height: 30px;
+  display: block;
+  background-color: #ff0000;
+  border-radius: 50%;
+  content: "";
+}
+
+.main_calender .date:hover {
+  cursor: pointer;
+  background-color: #e0e0e0;
+}
+
+.main_calender .date .stamp-image {
+  width: 50px; /* 이미지의 너비 */
+  height: 50px; /* 이미지의 높이 */
+  background: url("./success.png") no-repeat center center;
+  /* 이미지 경로 지정 */
+  background-size: cover; /* 이미지를 커버하는 크기로 조절 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}

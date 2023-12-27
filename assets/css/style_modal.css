@@ -1,0 +1,110 @@
+.modal{
+    position:absolute;
+    display:none;
+
+    justify-content: center;
+    top: 0px;
+    left:0;
+
+    width:100%;
+    height:auto;
+}
+
+/* 모달 내용 스타일 */
+.modal-content {
+    width: 750px; /* 원하는 가로 크기로 조절 */
+    height: auto; /*원하는 세로 크기로 조절 */
+
+    max-width: 100%;
+    max-height: 80%;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.modal-post{
+    position:absolute;
+    display:none;
+
+    justify-content: center;
+    top:0;
+    left:0;
+
+
+    width:100%;
+    height:800px;
+}
+.modal-content-post {
+    width: 780px; /* 원하는 가로 크기로 조절 */
+    height: auto; /* 원하는 세로 크기로 조절 */
+    max-width: 100%;
+    max-height: 80%;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* 모달안에 테이블 스타일 */
+.table {
+    width: 720px;
+    height: 140px; /* 원하는 세로 크기로 조절 */
+    max-width: 100%;
+    max-height: 80%;
+    padding: 20px;
+    left:20px;
+    right: 20px;
+    overflow-y: auto;
+}
+.price{
+    height: 30px;
+}
+.Incontent{
+    height: auto;
+}
+
+/* post-box는 스레드 중 한 게시글 */
+/* 클릭 시 hover 효과 */
+.post-box:hover {
+    background-color: #f9f9f9;
+}
+
+/* 댓글 섹션 스타일 */
+#comments-section {
+    margin-top: 20px;
+    max-height: 300px; /* 댓글 섹션의 최대 높이 설정 */
+    overflow-y: auto; /* 높이가 최대치를 초과하면 스크롤바 표시 */
+}
+
+.comment-box {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+#comment-date{
+    font-size : 11px;
+}
+
+#comment-text{
+    font-size : 14px;
+}
+
+/* 버튼 스타일 */
+button {
+    background-color: #99deab;
+    color: white;
+    padding: 5px 15px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.like-button{
+    margin-top: 10px;
+}
+.comments-count {
+    margin-right: 5px; /* 오른쪽 여백을 10px로 설정 */
+}
+
+#comment-button{
+    margin-bottom: 20px;
+}
